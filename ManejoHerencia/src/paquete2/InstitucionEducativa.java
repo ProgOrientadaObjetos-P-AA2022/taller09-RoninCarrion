@@ -12,6 +12,12 @@ public class InstitucionEducativa {
     String nombre;
     String siglas;
 
+    public InstitucionEducativa(String a, String b) {
+        nombre = a;
+        siglas = b;
+    }
+    
+
     public void establecerNombre(String a) {
         nombre = a;
     }

@@ -10,9 +10,9 @@ package paquete2;
  * @author reroes
  */
 public class Prestamo {
-    private Persona beneficiario;
-    private int timePrestamo;
-    private String ciudad;
+    protected Persona beneficiario;
+    protected int timePrestamo;
+    protected String ciudad;
 
     public Prestamo(Persona a, int b, String c) {
         beneficiario = a;
@@ -42,6 +42,16 @@ public class Prestamo {
 
     public String obtenerCiudad() {
         return ciudad;
+    }
+
+    @Override
+    public String toString() {
+        String cadena = String.format("Información de Préstamo:\n"
+                + "%s\n"
+                + "Tiempo de préstamo: %d\n"
+                + "Ciudad de realización de Préstamo: %s", beneficiario
+                , timePrestamo, ciudad);
+        return cadena;
     }
     
     

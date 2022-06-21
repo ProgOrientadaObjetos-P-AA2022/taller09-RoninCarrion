@@ -8,17 +8,18 @@ package paquete2;
  *
  * @author ronni
  */
-class Persona {
-    private String nombre;
-    private String apellido;
-    private String userName;
+public class Persona {
+
+    protected String nombre;
+    protected String apellido;
+    protected String userName;
 
     public Persona(String a, String b, String c) {
         nombre = a;
         apellido = b;
         userName = c;
     }
-    
+
     public void establecerNombre(String a) {
         nombre = a;
     }
@@ -42,6 +43,16 @@ class Persona {
     public String obtenerUserName() {
         return userName;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        String cadena = String.format("\t>> Nombre: %s\n"
+                + "\t>> Apellido: %s\n"
+                + "\t>> UserName: %s\n",
+                 nombre,
+                 apellido,
+                 userName);
+        return cadena;
+    }
+
 }

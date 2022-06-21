@@ -11,28 +11,24 @@ import paquete2.*;
  *
  * @author reroes
  */
-public class PrestamoEducativo extends Prestamo{
-    String lvlEstudio;
-    InstitucionEducativa centroEducativo;
-    double valorCarrera;
-    double valorMensual;
+public class PrestamoEducativo extends Prestamo {
 
-    public PrestamoEducativo(String lvlEstudio
-            , InstitucionEducativa centroEducativo
-            , double valorCarrera
-            , double valorMensual
-            , Persona a
-            , int b
-            , String c) {
+    private String lvlEstudio;
+    private InstitucionEducativa centroEducativo;
+    private double valorCarrera;
+    private double valorMensual;
+
+    public PrestamoEducativo(String nivelEstudio,
+             InstitucionEducativa cenEducativo,
+             double valCarrera,
+             Persona a,
+             int b,
+             String c) {
         super(a, b, c);
-        this.lvlEstudio = lvlEstudio;
-        this.centroEducativo = centroEducativo;
-        this.valorCarrera = valorCarrera;
-        this.valorMensual = valorMensual;
+        lvlEstudio = nivelEstudio;
+        centroEducativo = cenEducativo;
+        valorCarrera = valCarrera;
     }
-
-    
-    
 
     public void establecerLvlEstudio(String a) {
         lvlEstudio = a;
@@ -46,8 +42,8 @@ public class PrestamoEducativo extends Prestamo{
         valorCarrera = a;
     }
 
-    public void establecerValorMensual(double a) {
-        valorMensual = a;
+    public void establecerValorMensual() {
+        valorMensual = valorCarrera / timePrestamo;
     }
 
     public String obtenerLvlEstudio() {
@@ -65,7 +61,23 @@ public class PrestamoEducativo extends Prestamo{
     public double obtenerValorMensual() {
         return valorMensual;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        String cadena = String.format("\t\tPRÉSTAMO EDUCATIVO\n"
+                + "Información del Beneficiario: \n%s\n"
+                + "Información de Estudios:\n"
+                + "\t>> Nivel de Estudios: %s\n"
+                + "\t>> Centro Educativo: %s (%s)\n"
+                + "\t>> Valor total de la carrera: %.2f\n"
+                + "\t>> Valor mensual a Cancelar: %.2f\n"
+                + "---------------------------------------------", beneficiario,
+                lvlEstudio,
+                centroEducativo.obtenerNombre(),
+                centroEducativo.obtenerSiglas(),
+                valorCarrera,
+                valorMensual);
+        return cadena;
+    }
+
 }
