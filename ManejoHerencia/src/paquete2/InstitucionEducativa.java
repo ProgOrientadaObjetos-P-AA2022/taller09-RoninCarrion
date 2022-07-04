@@ -9,8 +9,8 @@ package paquete2;
  * @author ronni
  */
 public class InstitucionEducativa {
-    String nombre;
-    String siglas;
+    private String nombre;
+    private String siglas;
 
     public InstitucionEducativa(String a, String b) {
         nombre = a;

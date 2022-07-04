@@ -10,9 +10,9 @@ package paquete2;
  */
 public class Persona {
 
-    protected String nombre;
-    protected String apellido;
-    protected String userName;
+    private String nombre;
+    private String apellido;
+    private String userName;
 
     public Persona(String a, String b, String c) {
         nombre = a;

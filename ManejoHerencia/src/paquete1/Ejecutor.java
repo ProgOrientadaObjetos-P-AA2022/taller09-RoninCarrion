@@ -40,8 +40,6 @@ public class Ejecutor {
         System.out.println("Ingrese la ciudad en donde se está haciendo\n"
                 + " el préstamo: ");
         String city = a.nextLine();
-        // Creación del préstamo de tipo Prestamo
-        Prestamo prestamo = new Prestamo(persona, time, city);
         // Ahora le preguntaremos al usuario el tipo 
         // de préstamo que desea adquirir
 
@@ -67,7 +65,7 @@ public class Ejecutor {
                     String usuario = a.nextLine();
                     Persona p = new Persona (nomGarante, apeGarante, usuario);
                     PrestamoAutomovil pA = new PrestamoAutomovil(
-                            tipo, marca, persona, valor, p, time, city);
+                            tipo, marca, p, valor, persona, time, city);
                     pA.establecerValorMensual();
                     mensaje = String.format("%s%s\n", mensaje, pA);
                     System.out.println(mensaje);
